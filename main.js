@@ -18,3 +18,16 @@ ScrollReveal().reveal('.hrrr', {
     delay: 300,
     reset: true
 });
+
+const navBar = document.getElementsByClassName("navBar");
+
+var h = window.innerHeight/100;
+
+window.addEventListener("scroll", e => {
+    let py = 100 * window.scrollY / (h*100);
+    if(py > 17){
+        navBar[0].setAttribute("class", "navBar ModeClose");
+    }else{
+        navBar[0].setAttribute("class", "navBar ModeOpen");
+    }
+})

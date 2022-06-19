@@ -1,4 +1,4 @@
-.navBar{
+.ModeOpen{
     width: 30%;
     height: 7%;
 
@@ -9,7 +9,7 @@
     color: white;
 }
 
-.ulBar{
+.ModeOpen > ul{
     width: 100%;
     height: 100%;
 
@@ -25,4 +25,68 @@
     padding: 3% 1%;
     box-shadow: 0px -30px 20px rgba(169, 211, 248, 0.137) inset;
     border-bottom: 2px solid white;
+}
+.ModeClose{
+    width: 3.5rem;
+    height: 3.5rem;
+
+    position: fixed;
+    right: 3%;
+    top: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(45, 45, 45);
+    border-radius: 80%;
+    box-shadow: 1px 2px 3px rgba(255, 255, 255, 0.208);
+
+    animation: openBar 0.2s linear normal;
+}
+
+.ModeClose::before{
+    content: "";
+    position: absolute;
+
+    width: 2.5rem;
+    height: 0.24rem;
+    background-color: white;
+    border-radius: 4px;
+
+    transform: translateY(-0.25rem);
+    z-index: 1;
+}
+.ModeClose::after{
+    content: "";
+    position: absolute;
+
+    width: 2.5rem;
+    height: 0.24rem;
+    background-color: white;
+    border-radius: 4px;
+
+    transform: translateY(0.25rem);
+    z-index: 1;
+}
+
+.ModeClose ul{
+    display: none;
+}
+
+@keyframes openBar {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+#openB{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: 2;
 }
